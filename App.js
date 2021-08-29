@@ -107,6 +107,7 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Image style={styles.backgroundImage} source={Images.background} resizeMode="stretch" />
+        {this.state.running && <Text style={styles.gameOverText}>For Thủy ML</Text>}
         <GameEngine
           ref={ref => {
             this.gameEngine = ref;
@@ -133,7 +134,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
+    // justifyContent: 'center',
+    alignItems: 'center'
   },
   backgroundImage: {
     position: 'absolute', 
@@ -173,7 +176,7 @@ const styles = StyleSheet.create({
   gameOverText: {
     color:'white',
     fontSize: 44,
-    fontFamily: 'FB'
+    fontFamily: 'FB',
   },
   score: {
     position: 'absolute', 
